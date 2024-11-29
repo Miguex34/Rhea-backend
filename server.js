@@ -33,6 +33,7 @@ const pagoRoutes = require('./routes/pagoRoutes');
 const horarioRoutes = require('./routes/horarioRoutes');
 const disponibilidadEmpleadoRoutes = require('./routes/disponibilidadEmpleadoRoutes');
 const panelReservasRoutes = require('./routes/panelReservasRoutes');
+const pagoSimuladoRoutes = require('./routes/pagoSimuladoRoutes');
 const authMiddleware = require('./middleware/authMiddleware');
 const eventoRoutes = require('./routes/eventoRoutes');
 const app = express();
@@ -60,6 +61,7 @@ app.use('/api/horarios', horarioRoutes);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/eventos', eventoRoutes);
 app.use('/api/reservas', authMiddleware, reservaRoutes);
+app.use('/simulacion', pagoSimuladoRoutes);
 
 // Registrar las rutas de reserva de horarios con el prefijo /api/reserva-horario
 app.use('/api/reserva-horario', reservaHorarioRoutes);
