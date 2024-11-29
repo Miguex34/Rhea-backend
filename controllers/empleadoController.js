@@ -1,7 +1,7 @@
 const { EmpleadoNegocio } = require('../models/EmpleadoNegocio');
 const  Negocio  = require('../models/Negocio');
 const crypto = require('crypto');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const db = require('../config/database');
 const { sendEmail } = require('../utils/sendEmail');
 const dayjs = require('dayjs');
